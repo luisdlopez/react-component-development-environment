@@ -4,7 +4,7 @@ Develop react components using TypeScript and Storybook.
 
 ### Developing
 Components are developed using StoryBook.
-You can run either `npm start` or `npm run build:storybook` to start the project.
+You can run either `npm start` or `npm run storybook` to start the project.
 To create stories, follow the instructions in the [storybook website](https://storybook.js.org/basics/guide-react/).
 
 ### Building
