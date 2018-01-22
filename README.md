@@ -1,5 +1,5 @@
 
-# Component development environment
+# React Component development environment
 Develop react components using TypeScript and Storybook.
 
 ### Developing
