@@ -1,0 +1,136 @@
+{
+  "name": "react-component-development-environment",
+  "version": "0.0.1",
+  "description": "Develop react components with typescript and storybook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisdlopez/react-component-development-environment.git"
+  },
+  "main": "lib/index.js",
+  "jsnext:main": "es/index.js",
+  "module": "es/index.js",
+  "types": "types/src/index.d.ts",
+  "typescript": {
+    "definition": "types/src/index.d.ts"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "es",
+    "types"
+  ],
+  "scripts": {
+    "start": "npm run storybook",
+    "storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook",
+    "build": "node tools/precompile.js && tsc && node tools/build.js",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' 'tests/**/*.{ts,tsx}'",
+    "test": "jest",
+    "test:ci": "npm test",
+    "test:watch": "npm test --watch",
+    "test:coverage": "jest --coverage",
+    "lint-staged": "lint-staged",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "3.3.3",
+    "@storybook/addon-links": "3.3.3",
+    "@storybook/react": "3.3.3",
+    "@types/enzyme": "3.1.3",
+    "@types/enzyme-adapter-react-16": "1.0.0",
+    "@types/jest": "20.0.4",
+    "@types/node": "8.0.7",
+    "@types/react": "16.0.10",
+    "@types/react-dom": "16.0.1",
+    "@types/react-hot-loader": "3.0.5",
+    "@types/react-redux": "4.4.45",
+    "@types/redux-actions": "1.2.6",
+    "@types/webpack": "3.0.1",
+    "@types/webpack-env": "1.13.0",
+    "awesome-typescript-loader": "3.2.1",
+    "babel-jest": "20.0.3",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-dev-expression": "0.2.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-export-extensions": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "colors": "1.1.2",
+    "enzyme": "3.1.1",
+    "enzyme-adapter-react-16": "1.0.4",
+    "fs-extra": "5.0.0",
+    "jest": "20.0.4",
+    "jest-cli": "22.0.3",
+    "lint-staged": "4.0.2",
+    "pre-commit": "1.2.2",
+    "react-hot-loader": "3.0.0",
+    "redux-devtools-extension": "2.13.2",
+    "rimraf": "2.6.2",
+    "ts-jest": "20.0.7",
+    "tslint": "5.8.0",
+    "tslint-config-airbnb": "5.2.1",
+    "tslint-eslint-rules": "4.1.1",
+    "tslint-immutable": "4.0.1",
+    "tslint-react": "3.0.0",
+    "typescript": "2.5.3",
+    "webpack": "3.2.0",
+    "webpack-atoms": "4.2.0",
+    "webpack-dev-server": "2.5.0"
+  },
+  "dependencies": {
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-redux": "5.0.5",
+    "redux": "3.7.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/tools/",
+      "/compiled/",
+      "/dist/",
+      "/lib/",
+      "/es/",
+      "/stories/",
+      "/storybook-static/"
+    ],
+    "setupFiles": [
+      "raf/polyfill",
+      "./tests/setup.ts"
+    ],
+    "moduleNameMapper": {
+      "@/(.*)": "<rootDir>/src/$1",
+      "@tests/(.*)": "<rootDir>/tests/$1",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/tests/assetsTransformer.js"
+    }
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+      "git add"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/luisdlopez/react-component-development-environment/issues"
+  },
+  "homepage": "https://github.com/luisdlopez/react-component-development-environment#readme",
+  "author": "luiskd@gmail.com"
+}

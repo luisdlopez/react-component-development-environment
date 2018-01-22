@@ -1,0 +1,44 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-immutable",
+    "tslint-eslint-rules",
+    "tslint-config-airbnb"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "./types/interactive-components.d.ts"
+    ]
+  },
+  "jsRules": {
+  },
+  "rules": {
+    "import-name": false,
+    "variable-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "jsx-boolean-value": false,
+    "max-line-length": 120,
+
+    // Recommended built-in rules
+    "no-var-keyword": true,
+    "typedef": [true, "call-signature"],
+
+    // Immutability rules
+    "readonly-keyword": false,
+    "readonly-array": true,
+    "no-let": false,
+
+    // Functional style rules
+    "no-this": false,
+    "no-class": false,
+    "no-new": false,
+    "no-mixed-interface": false,
+    "no-expression-statement": false
+    ////
+
+  },
+  "rulesDirectory": []
+}
